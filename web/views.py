@@ -14,6 +14,7 @@ import xlsxwriter
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
+
 # 日誌
 @login_required
 def diary(request, month):
@@ -145,3 +146,9 @@ def user_login(request):
         else:
                 form = LoginForm()
         return render_to_response('login.html', {'message': message, 'form': form}, context_instance=RequestContext(request))
+      
+def dumplings(request):
+  return render_to_response('dumplings.html')
+
+def callus(request):
+  return render_to_response('callus.html')
